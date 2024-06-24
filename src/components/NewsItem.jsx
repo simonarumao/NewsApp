@@ -13,10 +13,11 @@ export class NewsItem extends Component {
         <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white mb-4" >
             
         <img className="w-full h-48 object-cover object-center" src={imageUrl} alt="News" />
-        <div className="px-6 py-4">
-                  <div className="font-bold text-xl mb-2">{title || defaultTitle} <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">{sources}</span>
+        <div className="px-6 py-4 h-60">
+          <div className="font-bold  text-xl mb-2">{title.slice(0,107) || defaultTitle}  <span class="bg-red-100  text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">{sources}</span>
+
           </div>
-          <p className="text-gray-700 text-base line-clamp-3">{description || defaultDescription}</p>
+          <p className="text-gray-700 text-base line-clamp-3">{description.slice(0,119) || defaultDescription}</p>
         </div>
         <div className="px-6 pt-2 pb-4">
           <a
@@ -26,7 +27,7 @@ export class NewsItem extends Component {
             Read more
           </a>
         </div>
-        <div className="px-6 pb-2">
+        <div className="px-6 pb-2 mb-2">
           <p className="text-xs text-gray-500">
             By {author ? author : "Unknown"} on {new Date(date).toDateString()}
           </p>

@@ -85,7 +85,7 @@ export class Navbar extends Component {
               {isDropdown2Open && (
                 <ul className="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-10">
                   <li>
-                    <Link to="/in" className="block px-4 py-2 text-gray-800 hover:bg-gray-200" onClick={this.closeDropdown2}>India</Link>
+                    <Link to="/" className="block px-4 py-2 text-gray-800 hover:bg-gray-200" onClick={this.closeDropdown2}>India</Link>
                   </li>
                   <li>
                     <Link to="/us" className="block px-4 py-2 text-gray-800 hover:bg-gray-200" onClick={this.closeDropdown2}>USA</Link>
