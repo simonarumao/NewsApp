@@ -34,13 +34,19 @@ export class News extends Component {
    
   async updateNews()
   {
+    this.props.setProgress(10)
     const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`
     this.setState({
       loading:true
     })
     let data = await fetch(url);
+    this.props.setProgress(30)
+
     let parsedData = await data.json();
-    this.setState({ articles: parsedData.articles, totalResults: parsedData.totalResults,loading:false }) 
+    this.props.setProgress(50)
+
+    this.setState({ articles: parsedData.articles, totalResults: parsedData.totalResults, loading: false }) 
+    this.props.setProgress(100)
   }
 
 
@@ -69,8 +75,8 @@ export class News extends Component {
   
 
   fetchMoreData = async() => {
+    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`
     this.setState({ page: this.state.page + 1 })
-    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`
     let data = await fetch(url);
     let parsedData = await data.json();
     this.setState({
@@ -85,7 +91,7 @@ export class News extends Component {
    
     return (
       <>
-        <h1 className="mb-4 mt-3 text-2xl font-extrabold leading-none tracking-tight text-customTeal md:text-4xl lg:text-4xl dark:text-white text-center">Top Headlines for {this.props.category}</h1>
+        <h1 className="mb-4  pt-20 text-2xl font-extrabold leading-none tracking-tight text-customTeal md:text-4xl lg:text-4xl dark:text-white text-center">Top Headlines for {this.props.category}</h1>
         {/* <div className="flex justify-between">
         //   <button disabled={this.state.page <=1} type="button" className="focus:outline-none text-white bg-customTeal p  focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" onClick={this.handlePreviousClick}>&larr; Previous</button>
         //   <button disabled= {this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.pageSize)} type="button" className="focus:outline-none text-white bg-customTeal  focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" onClick={this.handleNextClick}>Next &rarr;</button>

@@ -38,7 +38,7 @@ export class Navbar extends Component {
     const { isDropdown1Open, isDropdown2Open } = this.state;
 
     return (
-      <nav className="bg-customTeal p-3">
+      <nav className="bg-customTeal p-3 fixed-top">
         <div className="container mx-auto flex justify-between items-center">
           <div className="text-white text-xl font-bold">
             <Link to="/">NewsMonkey</Link>
