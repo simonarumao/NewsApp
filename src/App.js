@@ -4,8 +4,7 @@ import './App.css';
 import React, { Component } from 'react'
 import Navbar from './components/Navbar';
 import   News from './components/News';
-import About from './components/About';
-import Contact from './components/Contact';
+
 import LoadingBar from 'react-top-loading-bar'
 
 
@@ -33,7 +32,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className='bg-lightTeal h-[100vh] '>
+      <div className='bg-lightTeal  '>
         <Router>
           <Navbar />
           <LoadingBar
@@ -44,8 +43,7 @@ export default class App extends Component {
 
      
           <Routes>
-            <Route exact path='/about' element={<About />} />
-            <Route exact path='/contact' element={<Contact/>} />
+
             <Route exact path='/' element={<  News setProgress={this.setProgress} key="general"  pageSize={this.pageSize} country="in" apiKey={this.apiKey}  category="general"/>} />
             <Route exact path='/business' element={<  News setProgress={this.setProgress} key="business" pageSize={this.pageSize} country="in" apiKey={this.apiKey} category="business" />} />
             <Route exact path='/entertainment' element={<  News setProgress={this.setProgress} key="entertainment" pageSize={this.pageSize} country="in" apiKey={this.apiKey} category="entertainment" />} />

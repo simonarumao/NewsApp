@@ -10,7 +10,7 @@ export class NewsItem extends Component {
 
       return (
         
-        <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white mb-4" >
+        <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white mb-4 " >
             
         <img className="w-full h-48 object-cover object-center" src={imageUrl} alt="News" />
         <div className="px-6 py-4 h-60">
@@ -22,7 +22,7 @@ export class NewsItem extends Component {
         <div className="px-6 pt-2 pb-4">
           <a
             href={newsUrl}
-            className="text-white bg-customTeal  focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 block text-center"
+            className="text-white bg-customTeal hover:bg-hovercolor focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 block text-center"
           >
             Read more
           </a>

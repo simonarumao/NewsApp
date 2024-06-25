@@ -38,20 +38,21 @@ export class Navbar extends Component {
     const { isDropdown1Open, isDropdown2Open } = this.state;
 
     return (
-      <nav className="bg-customTeal p-3 fixed-top">
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="text-white text-xl font-bold">
+      <nav className="bg-customTeal pt-3 pb-3  fixed-top sm:px-4">
+        <div className="container flex justify-between items-center">
+          
+          <div className="text-white text-xl font-bold flex ">
+            <img className='w-8 mr-2 '  src="news.png" alt="hello" />
             <Link to="/">NewsMonkey</Link>
           </div>
           <div className="space-x-4 flex items-center">
-            <Link to="/" className="text-white hover:text-gray-400">Home</Link>
-            <Link to="/about" className="text-white hover:text-gray-400">About</Link>
-            <Link to="/contact" className="text-white hover:text-gray-400">Contact</Link>
+            <Link to="/" className=" text-white text-sm font-semibold	"><span className=' pb-1 hover:border-b-2 '>Home</span></Link>
+
 
             {/* First Dropdown */}
             <div className="relative inline-block">
-              <button onClick={this.toggleDropdown1} className="text-white hover:text-gray-400 focus:outline-none">
-                Categories
+              <button onClick={this.toggleDropdown1} className="text-white text-sm font-semibold  focus:outline-none">
+              <span className=' pb-1 hover:border-b-2 '>Categories</span>
               </button>
               {isDropdown1Open && (
                 <ul className="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-10">
@@ -79,8 +80,8 @@ export class Navbar extends Component {
 
             {/* Second Dropdown */}
             <div className="relative inline-block">
-              <button onClick={this.toggleDropdown2} className="text-white hover:text-gray-400 focus:outline-none">
-                Country
+              <button onClick={this.toggleDropdown2} className="text-white text-sm font-semibold hover:text-gray-400 focus:outline-none">
+              <span className=' pb-1 hover:border-b-2 '>Country</span>
               </button>
               {isDropdown2Open && (
                 <ul className="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-10">

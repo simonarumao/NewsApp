@@ -7,7 +7,9 @@ module.exports = {
     extend: {
       colors: {
         customTeal: '#017E7E',
-        lightTeal:'#EDFFFF'
+        lightTeal: '#EDFFFF',
+        hovercolor: '#045D5D',
+        
       },
     },
   },

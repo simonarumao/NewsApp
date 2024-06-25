@@ -91,7 +91,7 @@ export class News extends Component {
    
     return (
       <>
-        <h1 className="mb-4  pt-20 text-2xl font-extrabold leading-none tracking-tight text-customTeal md:text-4xl lg:text-4xl dark:text-white text-center">Top Headlines for {this.props.category}</h1>
+        <h1 className="mb-6 sm:mb-4 pt-20 text-2xl font-extrabold leading-none tracking-tight text-customTeal md:text-4xl lg:text-4xl dark:text-white text-center">Top Headlines for <span className='text-[#04C4C4]'>{this.props.category.charAt(0).toUpperCase() + this.props.category.slice(1)}</span></h1>
         {/* <div className="flex justify-between">
         //   <button disabled={this.state.page <=1} type="button" className="focus:outline-none text-white bg-customTeal p  focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" onClick={this.handlePreviousClick}>&larr; Previous</button>
         //   <button disabled= {this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.pageSize)} type="button" className="focus:outline-none text-white bg-customTeal  focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" onClick={this.handleNextClick}>Next &rarr;</button>
@@ -104,11 +104,11 @@ export class News extends Component {
           hasMore={this.state.articles.length !== this.state.totalResults}
           loader={<Spinner/>}
         >
-          <div className="container ">
+          <div className="container  ">
           <div className='row' >
         {this.state.loading && <Spinner />}
           { this.state.articles.map((element) => {
-            return <div className="col-md-3" key={element.url}>
+            return <div className="col-md-3 flex justify-center items-center " key={element.url}>
                 <NewsItem  title={element.title?element.title:""} description={element.description?element.description:""} imageUrl = {element.urlToImage?element.urlToImage:"notava.png"} newsUrl = {element.url} author={element.author} date = {element.publishedAt} sources={element.source.name} />
             </div>
         })}
