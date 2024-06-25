@@ -25,8 +25,7 @@ The News Application allows users to fetch and display multiple news articles fr
 
 - **React**: A JavaScript library for building user interfaces.
 - **Tailwind CSS**: A utility-first CSS framework for styling.
-- **Fetch**: A promise-based HTTP client for the browser and Node.js.
-
+- **Fetch**:  A built-in browser API for making HTTP requests.
 ## Setup and Installation
 
 ### Prerequisites
